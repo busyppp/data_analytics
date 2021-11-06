@@ -1,1 +1,143 @@
-1. 데이터 분석
+파이썬 문법 기초 내용 아는 내용이더라도 정리!!
+
+1. 데이터 타입 (집합)
+집합 형태의 데이터 타입
+
+  - list (순서 O, 집합)
+  - tuple (순서 O, 읽기 전용 집합)
+  - set (순서 X, 중복X 집합)
+  - dict (key, value로 이루어진 사전형 집합)
+
+1-1. list (순서가 있는 집합)
+  [] 형태로 표현
+  --> mylist = []
+
+  mylist.append(2)
+  mylist.remove(2)
+  len(mylist)
+
+
+1-2. tuple (순서가 있는 집합, 읽기 전용)
+  () 로 표현
+  --> mytuple = (1, 2, 3, 4, 5)
+
+  읽기 전용이라 수정이 안됨
+  len(mytuple)
+
+1-3. set (순서가 없는 집합, 중복 불가능
+  --> myset=set()
+  myset.add(1)
+
+
+1-4. dict (사전형 집합, key와 value 쌍)
+  {}로 표현
+  --> mydict=dict{}
+
+  mydict['apple'] = 123
+  len(mydict)
+
+
+
+
+2. function
+반복적으로 사용되는 부분을 묶어서, 재사용 가능하도록 만들어 주는 것
+
+  def func(a, b, c):
+    return (a + b) * c
+    
+  ex>> func(1,2,3) = 9
+
+  - def는 함수를 위한 정의 (define)
+  def 함수이름 (parameter1, parameter2, parameter...):
+
+  parameter는 함수로 부터 넘겨 받은 변수 또는 값
+  끝에 콜론 (:) 빼먹지 않음에 주의하기!!!!
+
+  - 함수는 리턴을 해도 되고, 안 해도 된다
+
+  - parameter는 여러 개 만들 수 있지만, 함수에 넘겨 줄 때 순서가 중요
+
+
+
+
+3. 반복문
+[기본 문법]
+for 하나씩 꺼내올 때 변수 in [꺼내올 집합]
+
+  mylist = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+  for abc in mylist:
+      print(abc)
+    
+  - 반복문에서 짝수만 출력하려면?
+  for i in mylist:
+    if i % 2 == 0:
+          print(i)
+        
+  - continue를 사용해서 다음 구문은 skip 가능
+  for i in mylist:
+      if i % 2 == 1:
+          continue
+      ##################
+      print(i)
+    
+  - break를 통해 빠져나오는 기능
+  for i in mylist:
+      if i >= 6:
+          print('break')
+          break
+      print(i)
+    
+   **List Comprehension**
+  even = [i for i in mylist if i % 2 == 0]
+  - 한줄로 반복문을 출력할 수 있음
+  - 파이썬에만 있는 기능
+  - 편리하게 사용 가능
+ 
+ 
+
+4. 문자열
+4.1 split
+특정 규칙에 의해 문자열을 쪼갬
+
+  a = 'This is a pen'
+  aa = a.split(' ')
+  --> ['This', 'is', 'a', 'pen']
+  list 형식으로 값을 return
+  aa[0] = 'This'
+
+4.2 대/소문자
+  a = 'My name is Milky'
+  a.lower()
+  a.upper()
+
+4.3 start with / end with
+  a = '01-sample.png'
+  b = '02-sample.jpg'
+  c = '03-sample.pdf'
+
+  a.startswith('01')
+  -> ture
+  a.endswith('.jpg')
+  -> false
+
+4.4 replace (치환)
+  a = '01-sample.png'
+  a.replace('.png', '.jpg')
+  -> '01-sample.jpg'
+  
+4.5 strip (공백 제거)
+  a.strip()
+  
+  
+  
+5. import
+  import numpy as np
+  import pandas as pd
+  import matplotlib.pyplot as plt
+  import seaborn as sns
+
+  numpy: 과학 계산을 위한 패키지
+  pandas: 데이터 분석을 할 때 가장 많이 쓰이는 패키지
+  matplotlib: 시각화를 위한 패키지
+  seaborn: 시각화를 위한 패키지 (matplotlib을 더 쉽게 사용할 수 있도록 도와주는 패키지)
