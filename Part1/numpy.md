@@ -1,3 +1,5 @@
+#numpy
+
 1. Alias 지정
   import numpy as np
   
